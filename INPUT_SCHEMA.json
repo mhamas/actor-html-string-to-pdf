@@ -7,7 +7,7 @@
       "title": "HTML string",
       "type": "string",
       "description": "HTML string",
-      "editor": "textfield"
+      "editor": "textarea"
     }
   },
   "required": []
