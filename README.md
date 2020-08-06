@@ -5,6 +5,4 @@
 Actor that converts a single HTML string into A4 PDF using Pupeteer headless browser.
 
 ## Output
-TODO
-
-
+PDF file will be stored as OUTPUT of this actor.
