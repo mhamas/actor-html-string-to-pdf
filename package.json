@@ -1,13 +1,10 @@
 {
-  "name": "apify-actor-website-backup",
+  "name": "actor-html-string-to-pdf",
   "version": "0.0.1",
   "author": "Matej Hamas",
   "private": true,
   "dependencies": {
-    "@types/crypto-js": "^3.1.47",
     "apify": "^0.21.0",
-    "crypto-js": "^4.0.0",
-    "jszip": "^3.5.0",
     "typescript": "^3.9.6"
   },
   "scripts": {
@@ -19,7 +16,6 @@
   "main": "build/main.js",
   "devDependencies": {
     "@apify/eslint-config": "^0.1.0",
-    "@types/jszip": "^3.4.1",
     "@types/node": "^14.0.18",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
     "@typescript-eslint/parser": "^3.6.0",

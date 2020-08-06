@@ -1,94 +1,13 @@
 {
-  "title": "Input schema for the website-backup actor.",
+  "title": "Input schema for the html-string-to-pdf actor.",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "startURLs": {
-      "title": "Start URLs",
-      "type": "array",
-      "description": "List of URL entry points. Each entry is an object of type <code>{'url': 'http://www.example.com'}</code>",
-      "prefill": [{ "url": "https://blog.apify.com" }],
-      "editor": "requestListSources"
-    },
-    "linkSelector": {
-      "title": "Link selector",
+    "htmlString": {
+      "title": "HTML string",
       "type": "string",
-      "description": "CSS selector matching elements with 'href' attributes that should be enqueued. To enqueue urls from <code><div class=\"my-class\" href=...></code> tags, you would enter <strong>div.my-class</strong>. Leave empty to ignore all links.",
-      "editor": "textfield",
-      "prefill": "a"
-    },
-    "maxRequestsPerCrawl": {
-      "title": "Max pages per run",
-      "type": "integer",
-      "description": "The maximum number of pages that the scraper will load. The scraper will stop when this limit is reached. It's always a good idea to set this limit in order to prevent excess platform usage for misconfigured scrapers. Note that the actual number of pages loaded might be slightly higher than this value.<br><br>If set to <code>0</code>, there is no limit.",
-      "minimum": 0,
-      "default": 10
-    },
-    "maxCrawlingDepth": {
-      "title": "Max crawling depth",
-      "type": "integer",
-      "description": "Defines how many links away from the StartURLs will the scraper descend. 0 means unlimited.",
-      "minimum": 0,
-      "default": 0
-    },
-    "maxConcurrency": {
-      "title": "Max concurrency",
-      "type": "integer",
-      "description": "Defines how many pages can be processed by the scraper in parallel. The scraper automatically increases and decreases concurrency based on available system resources. Use this option to set a hard limit.",
-      "minimum": 1,
-      "default": 50
-    },
-    "customKeyValueStore": {
-      "title": "Custom key value store",
-      "type": "string",
-      "description": "Use custom named key value store for saving results. If the key value store with this name doesn't yet exist, it's created. The snapshots of the pages will be saved in the key value store.",
-      "editor": "textfield",
-      "default": ""
-    },
-    "customDataset": {
-      "title": "Custom dataset",
-      "type": "string",
-      "description": "Use custom named dataset for saving metadata. If the dataset with this name doesn't yet exist, it's created. The metadata about the snapshots of the pages will be saves in the dataset.",
-      "editor": "textfield",
-      "default": ""
-    },
-    "timeoutForSingleUrlInSeconds": {
-      "title": "Timeout (in seconds) for backuping a single URL.",
-      "type": "integer",
-      "description": "Timeout in seconds for doing a backup of a single URL. Try to increase this timeout in case you see an error <code> Error: handlePageFunction timed out after X seconds. </code>.",
-      "minimum": 1,
-      "default": 120
-    },
-    "navigationTimeoutInSeconds": {
-      "title": "Timeout (in seconds) in which page navigation needs to finish",
-      "type": "integer",
-      "description": "Timeout in seconds in which the navigation needs to finish. Try to increase this if you see an error <code>Navigation timeout of XXX ms exceeded </code>",
-      "minimum": 1,
-      "default": 120
-    },
-    "searchParamsToIgnore": {
-      "title": "URL search parameters to ignore",
-      "type": "array",
-      "editor": "stringList",
-      "description": "Names of URL search parameters (such as 'source', 'sourceid', etc.) that should be ignored in the URLs when crawling.",
-      "default": []
-    },
-    "sameOrigin": {
-      "title": "Only consider pages under the same domain as one of the provided URLs.",
-      "type": "boolean",
-      "description": "Only backup URLs with the same origin as any of the start URL origins. E.g. when turned on for a single start URL <code>https://blog.apify.com</code>, only links with prefix <code>https://blog.apify.com</code> will be backed up recursively.",
-      "default": true
-    },
-    "proxyConfiguration": {
-      "sectionCaption": "Proxy and browser configuration",
-      "title": "Proxy configuration",
-      "type": "object",
-      "description": "Choose to use no proxy, Apify Proxy, or provide custom proxy URLs.",
-      "prefill": {
-        "useApifyProxy": false
-      },
-      "default": {},
-      "editor": "proxy"
+      "description": "HTML string",
+      "editor": "textfield"
     }
   },
   "required": []
