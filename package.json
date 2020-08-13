@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "clean": "rm -r build/",
-    "start": "npm run build && node build/main.js",
+    "start": "node build/main.js",
+    "start-dev": "npm run build && node build/main.js",
     "lint": "eslint --ext .js,.ts --fix src/**"
   },
   "main": "build/main.js",
