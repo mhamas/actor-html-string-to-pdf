@@ -9,7 +9,11 @@ Apify.main(async () => {
     await page.setContent(htmlString);
 
     const pdfOptions: PDFOptions = {
-        "format": "A4"
+        "format": "A4",
+        displayHeaderFooter: true,
+        headerTemplate: "<div/>",
+        footerTemplate: "<div style=\"text-align: right;width: 297mm;font-size: 8px;\"><span style=\"margin-right: 1cm\">Page <span class=\"pageNumber\"></span> of <span class=\"totalPages\"></span></span></div>",
+        margin: {  top: "1cm", bottom: "1cm" }
     }
 
     const pdfBuffer = await page.pdf(pdfOptions);
